@@ -1,0 +1,109 @@
+# Configuration de l'éditeur Pages CMS (https://app.pagescms.org)
+# Chaque entrée ci-dessous apparaît dans le menu de l'éditeur.
+media:
+  input: assets/images
+  output: /assets/images
+
+content:
+  - name: accueil
+    label: Page d'accueil
+    type: file
+    path: index.html
+    format: yaml-frontmatter
+    fields:
+      - { name: layout, type: string, hidden: true }
+      - { name: permalink, type: string, hidden: true }
+      - { name: description, label: "Description pour Google (150 caractères environ)", type: text }
+      - { name: hero_surtitre, label: Petit texte au-dessus du titre, type: string }
+      - { name: hero_titre, label: Grand titre, type: string }
+      - { name: hero_texte, label: Texte sous le titre, type: text }
+      - { name: diagnostic, label: "Encadré « diagnostic offert » (une ligne par point)", type: string, list: true }
+      - { name: questions, label: "Phrases « Vous reconnaissez-vous ? »", type: string, list: true }
+      - { name: body, label: Mise en page (ne pas modifier), type: code, hidden: true }
+
+  - name: services
+    label: Services
+    type: file
+    path: _data/services.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: titre, label: Titre du service, type: string }
+      - { name: pour, label: "Petit texte au-dessus (ex. « Avant chaque assemblée générale »)", type: string }
+      - { name: resume, label: Résumé (page d'accueil), type: text }
+      - { name: intro, label: Présentation (page Services), type: text }
+      - { name: liste_titre, label: Titre de la liste, type: string }
+      - { name: points, label: Points de la liste, type: string, list: true }
+      - { name: livrable, label: "Livrable (laisser vide si aucun)", type: string }
+
+  - name: tarifs
+    label: Tarifs
+    type: file
+    path: _data/tarifs.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: titre, label: Nom de la formule, type: string }
+      - { name: prix, label: "Prix (ex. « À partir de 350 € »)", type: string }
+      - { name: points, label: Ce qui est inclus, type: string, list: true }
+      - { name: bouton, label: Texte du bouton, type: string }
+      - { name: mise_en_avant, label: Mettre en avant cette formule, type: boolean }
+
+  - name: faq
+    label: Questions fréquentes
+    type: file
+    path: _data/faq.yml
+    format: yaml
+    list: true
+    fields:
+      - { name: question, label: Question, type: string }
+      - { name: reponse, label: Réponse, type: text }
+
+  - name: a-propos
+    label: À propos
+    type: file
+    path: a-propos.md
+    format: yaml-frontmatter
+    fields:
+      - { name: layout, type: string, hidden: true }
+      - { name: title, type: string, hidden: true }
+      - { name: permalink, type: string, hidden: true }
+      - { name: description, label: "Description pour Google", type: text }
+      - { name: titre, label: Titre de la page, type: string }
+      - { name: photo, label: Photo (portrait vertical), type: image }
+      - { name: body, label: Texte, type: rich-text }
+
+  - name: coordonnees
+    label: Coordonnées
+    type: file
+    path: _data/coordonnees.yml
+    format: yaml
+    fields:
+      - { name: entreprise, label: Nom de l'entreprise, type: string }
+      - { name: dirigeante, label: Dirigeante, type: string }
+      - { name: forme, label: Forme juridique, type: string }
+      - { name: adresse, label: Adresse complète, type: string }
+      - { name: ville_affichee, label: "Ville affichée en bas de page", type: string }
+      - { name: siren, label: SIREN, type: string }
+      - { name: immatriculation, label: "Immatriculation (RCS ou RNE)", type: string }
+      - { name: tva, label: Mention TVA, type: string }
+      - { name: telephone, label: "Téléphone (affiché)", type: string }
+      - { name: telephone_lien, label: "Téléphone au format +33…", type: string }
+      - { name: email, label: E-mail, type: string }
+      - { name: zone, label: Zone d'intervention, type: string }
+      - { name: delai_reponse, label: Délai de réponse annoncé, type: string }
+      - { name: linkedin, label: Lien LinkedIn, type: string }
+      - { name: instagram, label: Lien Instagram, type: string }
+      - { name: web3forms_cle, label: "Clé Web3Forms (formulaire de contact)", type: string }
+
+  - name: mentions
+    label: Mentions légales
+    type: file
+    path: mentions-legales.md
+    format: yaml-frontmatter
+    fields:
+      - { name: layout, type: string, hidden: true }
+      - { name: title, type: string, hidden: true }
+      - { name: permalink, type: string, hidden: true }
+      - { name: description, type: string, hidden: true }
+      - { name: body, label: Texte, type: rich-text }

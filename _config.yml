@@ -1,0 +1,16 @@
+# Réglages généraux du site (GitHub Pages construit le site automatiquement)
+title: Expert Copro Conseil
+tagline: "Conseil en copropriété à Toulouse"
+description: "Conseil pour conseils syndicaux et copropriétaires à Toulouse et en Haute-Garonne : contrôle des comptes, audit de gestion, préparation de l'assemblée générale."
+url: "https://www.expertcoproconseil.fr"
+baseurl: ""
+lang: fr_FR
+locale: fr_FR
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - README.md
+  - .pages.yml

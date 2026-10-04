@@ -1,0 +1,73 @@
+{%- assign c = site.data.coordonnees -%}
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+{% seo %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+<link rel="icon" href="{{ '/assets/favicon.svg' | relative_url }}" type="image/svg+xml">
+</head>
+<body>
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="{{ '/' | relative_url }}" aria-label="{{ c.entreprise }}, accueil">
+      <span class="brand-mark">EC</span>
+      <span><b>{{ c.entreprise }}</b><small>Conseil en copropriété</small></span>
+    </a>
+    <button class="burger" type="button" aria-label="Ouvrir le menu" aria-controls="menu" aria-expanded="false">☰</button>
+    <nav aria-label="Menu principal">
+      <ul id="menu">
+        {%- assign liens = "/|Accueil,/services/|Services,/tarifs/|Tarifs,/a-propos/|À propos,/questions/|Questions" | split: "," -%}
+        {%- for l in liens -%}{%- assign p = l | split: "|" %}
+        <li><a href="{{ p[0] | relative_url }}"{% if page.url == p[0] %} class="active" aria-current="page"{% endif %}>{{ p[1] }}</a></li>
+        {%- endfor %}
+        <li><a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Diagnostic offert</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+{{ content }}
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4>{{ c.entreprise }}</h4>
+        <p>Conseil pour les conseils syndicaux et les copropriétaires, à Toulouse et en Haute-Garonne.</p>
+        <p>{{ c.ville_affichee }} · SIREN {{ c.siren }}</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="{{ '/services/' | relative_url }}">Services</a></li>
+          <li><a href="{{ '/tarifs/' | relative_url }}">Tarifs</a></li>
+          <li><a href="{{ '/a-propos/' | relative_url }}">À propos</a></li>
+          <li><a href="{{ '/questions/' | relative_url }}">Questions fréquentes</a></li>
+          <li><a href="{{ '/mentions-legales/' | relative_url }}">Mentions légales et confidentialité</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:{{ c.telephone_lien }}">{{ c.telephone }}</a></li>
+          <li><a href="mailto:{{ c.email }}">{{ c.email }}</a></li>
+          <li><a href="{{ c.linkedin }}" target="_blank" rel="noopener">LinkedIn</a> · <a href="{{ c.instagram }}" target="_blank" rel="noopener">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="copy">© {{ site.time | date: "%Y" }} {{ c.entreprise }} · {{ c.dirigeante }}, {{ c.forme | downcase }}</div>
+  </div>
+</footer>
+<script>
+  var b=document.querySelector(".burger"),m=document.getElementById("menu");
+  b.addEventListener("click",function(){var o=m.classList.toggle("open");b.setAttribute("aria-expanded",o)});
+</script>
+</body>
+</html>

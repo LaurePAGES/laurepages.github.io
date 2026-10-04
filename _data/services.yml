@@ -1,0 +1,53 @@
+- titre: Accompagnement du conseil syndical
+  pour: Pour les conseils syndicaux
+  resume: "Un appui régulier pour exercer votre rôle sereinement : réunions, relations avec le syndic, suivi des décisions."
+  intro: "Être membre du conseil syndical demande du temps, des compétences et de la rigueur. Je vous accompagne à chaque étape pour exercer votre rôle avec plus de sérénité."
+  liste_titre: Ce que je fais
+  points:
+    - Préparation et animation de vos réunions
+    - Aide à la rédaction de vos courriers et demandes au syndic
+    - Suivi des décisions votées et des relances
+    - Disponibilité entre les réunions pour vos questions
+  livrable: ""
+- titre: Contrôle et analyse des comptes
+  pour: Avant chaque assemblée générale
+  resume: "Budget, appels de fonds, charges, impayés : je vérifie et je vous explique les chiffres avant l'assemblée générale."
+  intro: "L'analyse financière est une étape essentielle pour une gestion saine, transparente et durable de l'immeuble."
+  liste_titre: Ce que je vérifie
+  points:
+    - Budget prévisionnel et écarts avec les dépenses réelles
+    - Charges, contrats d'entretien et d'assurance
+    - Impayés et procédures de recouvrement
+    - Fonds de travaux et trésorerie
+  livrable: "une note de synthèse et la liste des questions à poser au syndic."
+- titre: Audit de gestion
+  pour: Pour faire le point
+  resume: "Un état des lieux complet du fonctionnement de l'immeuble, avec un rapport écrit et des recommandations priorisées."
+  intro: "Un état des lieux global du fonctionnement de l'immeuble pour éclairer les décisions des copropriétaires."
+  liste_titre: Ce que couvre l'audit
+  points:
+    - Gestion administrative et tenue des documents obligatoires
+    - Situation financière et contrats en cours
+    - Respect des décisions d'assemblée générale
+    - Qualité de la relation avec le syndic
+  livrable: "un rapport écrit avec des recommandations classées par priorité."
+- titre: Préparation de l'assemblée générale
+  pour: Avant le vote
+  resume: "Relecture de l'ordre du jour et des résolutions, questions à poser, points de vigilance avant le vote."
+  intro: "L'assemblée générale est le moment où tout se décide. Mieux vaut arriver préparé."
+  liste_titre: Ce que je fais
+  points:
+    - Relecture de l'ordre du jour et des projets de résolution
+    - Questions à inscrire ou à poser en séance
+    - Présence à vos côtés en assemblée, sur demande
+  livrable: ""
+- titre: Travaux et fonds de travaux
+  pour: Pour les projets de travaux
+  resume: "Comprendre le plan pluriannuel de travaux, comparer les devis, anticiper le financement."
+  intro: "Ravalement, toiture, rénovation énergétique : des décisions lourdes, qu'il faut anticiper et financer."
+  liste_titre: Ce que je fais
+  points:
+    - Explication du plan pluriannuel de travaux et du fonds de travaux
+    - Comparaison des devis et des calendriers
+    - Repères sur les aides possibles, à vérifier au cas par cas
+  livrable: ""

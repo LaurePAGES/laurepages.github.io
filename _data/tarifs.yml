@@ -1,0 +1,24 @@
+- titre: Diagnostic simplifié
+  prix: Offert
+  points:
+    - Échange de 30 minutes
+    - Lecture rapide de vos documents
+    - 3 priorités identifiées
+  bouton: Le demander
+  mise_en_avant: false
+- titre: Mission ponctuelle
+  prix: "À partir de 390 €"
+  points:
+    - Contrôle des comptes, audit de gestion ou préparation d'AG
+    - Rapport écrit
+    - Restitution en visio ou sur place
+  bouton: Demander un devis
+  mise_en_avant: true
+- titre: Accompagnement annuel
+  prix: "À partir de 690 € / an"
+  points:
+    - Suivi du conseil syndical toute l'année
+    - Contrôle des comptes avant l'AG
+    - Questions illimitées par e-mail
+  bouton: En discuter
+  mise_en_avant: false

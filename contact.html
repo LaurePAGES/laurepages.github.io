@@ -1,0 +1,59 @@
+---
+layout: default
+title: Contact et diagnostic offert
+permalink: /contact/
+description: "Demandez votre diagnostic offert : décrivez votre copropriété, Laure Pages vous recontacte pour un premier échange. Toulouse et Haute-Garonne."
+---
+{%- assign c = site.data.coordonnees -%}
+<section>
+  <div class="wrap grid-2">
+    <div>
+      <span class="eyebrow">Contact</span>
+      <h1 class="h1-sm">Demander mon diagnostic offert</h1>
+      <p class="lead">Décrivez votre copropriété en quelques lignes. Je vous recontacte sous {{ c.delai_reponse }} pour fixer un premier échange.</p>
+      <div class="contact-info" style="margin-top:28px">
+        <p><b>Téléphone</b><a href="tel:{{ c.telephone_lien }}">{{ c.telephone }}</a></p>
+        <p><b>E-mail</b><a href="mailto:{{ c.email }}">{{ c.email }}</a></p>
+        <p><b>Zone d'intervention</b>{{ c.zone }}</p>
+        <p><b>Réseaux</b><a href="{{ c.linkedin }}" target="_blank" rel="noopener">LinkedIn</a> · <a href="{{ c.instagram }}" target="_blank" rel="noopener">Instagram</a></p>
+      </div>
+    </div>
+    <form class="card" id="form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="{{ c.web3forms_cle }}">
+      <input type="hidden" name="subject" value="Nouvelle demande depuis le site Expert Copro Conseil">
+      <input type="hidden" name="from_name" value="Site Expert Copro Conseil">
+      <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="row">
+        <div><label for="nom">Nom et prénom</label><input id="nom" name="Nom" required autocomplete="name"></div>
+        <div><label for="tel">Téléphone</label><input id="tel" name="Téléphone" type="tel" autocomplete="tel"></div>
+      </div>
+      <div><label for="mail">E-mail</label><input id="mail" name="email" type="email" required autocomplete="email"></div>
+      <div class="row">
+        <div><label for="qui">Vous êtes</label><select id="qui" name="Profil"><option>Membre du conseil syndical</option><option>Copropriétaire</option><option>Syndic bénévole</option><option>Autre</option></select></div>
+        <div><label for="ville">Ville de l'immeuble</label><input id="ville" name="Ville" placeholder="ex. Toulouse"></div>
+      </div>
+      <div class="row">
+        <div><label for="lots">Nombre de lots (environ)</label><input id="lots" name="Nombre de lots" inputmode="numeric"></div>
+        <div><label for="besoin">Votre besoin</label><select id="besoin" name="Besoin"><option>Diagnostic offert</option>{% for s in site.data.services %}<option>{{ s.titre }}</option>{% endfor %}<option>Autre</option></select></div>
+      </div>
+      <div><label for="msg">Votre message</label><textarea id="msg" name="Message" rows="5" required></textarea></div>
+      <p class="rgpd">Vos informations servent uniquement à répondre à votre demande. Voir la <a href="{{ '/mentions-legales/' | relative_url }}#confidentialite">politique de confidentialité</a>.</p>
+      <button class="btn btn-primary" type="submit">Envoyer ma demande</button>
+      <p class="form-ok" id="form-ok" role="status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+<script>
+document.getElementById("form").addEventListener("submit", async function(e){
+  e.preventDefault();
+  var f=this, out=document.getElementById("form-ok"), btn=f.querySelector("button");
+  btn.disabled=true; btn.textContent="Envoi en cours…";
+  try{
+    var r=await fetch(f.action,{method:"POST",headers:{"Accept":"application/json"},body:new FormData(f)});
+    var j=await r.json();
+    if(j.success){ f.reset(); out.textContent="Merci, votre demande est bien partie. Je vous recontacte rapidement."; }
+    else { out.textContent="L'envoi n'a pas abouti. Vous pouvez m'écrire directement à {{ c.email }} ou m'appeler au {{ c.telephone }}."; }
+  }catch(err){ out.textContent="Pas de connexion. Vous pouvez m'écrire directement à {{ c.email }} ou m'appeler au {{ c.telephone }}."; }
+  out.classList.add("show"); btn.disabled=false; btn.textContent="Envoyer ma demande";
+});
+</script>

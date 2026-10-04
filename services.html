@@ -1,0 +1,25 @@
+---
+layout: default
+title: Services
+permalink: /services/
+description: "Accompagnement du conseil syndical, contrôle des comptes, audit de gestion, préparation d'AG et travaux, à Toulouse et en Haute-Garonne."
+---
+<section class="hero" style="padding-bottom:40px">
+  <div class="wrap">
+    <span class="eyebrow">Services</span>
+    <h1>Des missions concrètes, avec un livrable à chaque fois</h1>
+    <p class="lead">Chaque mission se termine par un document écrit que vous pouvez partager avec les autres copropriétaires. Les missions peuvent se combiner.</p>
+  </div>
+</section>
+<section style="padding-top:20px">
+  <div class="wrap">
+    {%- for s in site.data.services %}
+    <div class="svc">
+      <div><span class="for">{{ s.pour }}</span><h2 class="h3">{{ s.titre }}</h2><p>{{ s.intro }}</p></div>
+      <div class="box"><b>{{ s.liste_titre }}</b><ul>{% for p in s.points %}<li>{{ p }}</li>{% endfor %}</ul>{% if s.livrable != "" and s.livrable %}<p style="margin:12px 0 0"><b>Livrable :</b> {{ s.livrable }}</p>{% endif %}</div>
+    </div>
+    {%- endfor %}
+    <p class="rgpd" style="margin-top:30px">Expert Copro Conseil apporte une aide à la gestion et à la compréhension des documents de la copropriété. Pour un litige ou une question juridique précise, je vous oriente vers un professionnel du droit.</p>
+    <div class="center" style="margin-top:30px"><a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Demander mon diagnostic offert</a></div>
+  </div>
+</section>

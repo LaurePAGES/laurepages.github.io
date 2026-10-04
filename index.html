@@ -1,0 +1,91 @@
+---
+layout: default
+permalink: /
+description: "Conseil en copropriété à Toulouse et en Haute-Garonne. Comptable en cabinet de syndic depuis 5 ans, j'aide les conseils syndicaux à comprendre et contrôler les comptes. Premier diagnostic offert."
+hero_surtitre: "Toulouse · Haute-Garonne"
+hero_titre: "Un regard extérieur sur la gestion de votre copropriété"
+hero_texte: "J'aide les conseils syndicaux et les copropriétaires à comprendre leurs comptes, suivre la gestion de leur syndic et préparer les bonnes décisions. Comptable en cabinet de syndic depuis 5 ans, je connais les comptes de copropriété de l'intérieur."
+diagnostic:
+  - Un échange de 30 minutes, en visio ou par téléphone
+  - Une lecture rapide de vos derniers documents (comptes, contrat de syndic, PV d'AG)
+  - Les 3 points à surveiller en priorité
+  - "Sans engagement : vous décidez ensuite"
+questions:
+  - "« Les charges augmentent chaque année et personne n'explique vraiment pourquoi. »"
+  - "« On ne sait même pas quels documents le syndic doit nous transmettre. »"
+  - "« On nous demande de vérifier les comptes avant l'AG, mais par où commencer ? »"
+  - "« Des travaux importants arrivent : fonds de travaux, plan pluriannuel, devis… on s'y perd. »"
+---
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">{{ page.hero_surtitre }}</span>
+        <h1>{{ page.hero_titre }}</h1>
+        <p class="lead">{{ page.hero_texte }}</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}">Demander mon diagnostic offert</a>
+          <a class="btn btn-ghost" href="{{ '/services/' | relative_url }}">Voir les services</a>
+        </div>
+      </div>
+      <div class="hero-card">
+        <h2 class="h3">Le diagnostic simplifié offert</h2>
+        <ul>
+          {%- for d in page.diagnostic %}
+          <li>{{ d }}</li>
+          {%- endfor %}
+        </ul>
+      </div>
+    </div>
+    <div class="trust">
+      <div><b>5 ans de comptabilité</b>de copropriétés : je sais où regarder</div>
+      <div><b>Sans conflit d'intérêts</b>jamais sur un immeuble géré par mon employeur</div>
+      <div><b>Toulouse et Haute-Garonne</b>sur place, et en visio ailleurs</div>
+      <div><b>Des explications claires</b>sans jargon, avec des documents écrits</div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Vous reconnaissez-vous ?</span>
+    <h2>Être au conseil syndical, c'est bénévole… mais pas simple</h2>
+    <p class="lead">Les membres du conseil syndical donnent de leur temps, souvent sans formation en comptabilité ni en droit de la copropriété. Résultat : on signe, on vote, on fait confiance, sans toujours savoir quoi vérifier.</p>
+    <div class="pain">
+      {%- for q in page.questions %}
+      <div>{{ q }}</div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section class="alt">
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Ce que je fais pour vous</span>
+      <h2>Des missions ponctuelles ou un suivi dans la durée</h2>
+    </div>
+    <div class="grid-3 grid-svc" style="margin-top:36px">
+      {%- for s in site.data.services %}
+      <div class="card"><h3>{{ s.titre }}</h3><p>{{ s.resume }}</p><a class="more" href="{{ '/services/' | relative_url }}">En savoir plus →</a></div>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="center">
+      <span class="eyebrow">Comment ça se passe</span>
+      <h2>Quatre étapes, sans mauvaise surprise</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><h3>Premier échange</h3><p>30 minutes offertes pour comprendre votre situation et vos questions.</p></div>
+      <div class="step"><h3>Diagnostic simplifié</h3><p>Je parcours vos documents et je vous signale les points prioritaires. Offert.</p></div>
+      <div class="step"><h3>Proposition sur mesure</h3><p>Un devis clair, adapté à la taille de l'immeuble et à vos besoins.</p></div>
+      <div class="step"><h3>Accompagnement</h3><p>Analyse, rapport écrit, présence en réunion ou en AG si besoin.</p></div>
+    </div>
+  </div>
+</section>
+
+{% include cta.html %}

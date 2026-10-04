@@ -1,0 +1,15 @@
+---
+layout: default
+---
+<section>
+  {%- assign a_photo = false -%}{%- if page.photo and page.photo != "" -%}{%- assign a_photo = true -%}{%- endif %}
+  <div class="wrap{% if a_photo %} about{% endif %}">
+    {% if a_photo %}<img class="photo-img" src="{{ page.photo | relative_url }}" alt="Portrait de Laure Pages">{% endif %}
+    <div class="prose">
+      <span class="eyebrow">À propos</span>
+      <h1 class="h1-sm">{{ page.titre }}</h1>
+      {{ content }}
+      <a class="btn btn-primary" href="{{ '/contact/' | relative_url }}" style="margin-top:12px">Prendre contact</a>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+---
+layout: default
+title: Tarifs
+permalink: /tarifs/
+description: "Premier diagnostic offert, puis un devis écrit pour chaque mission : contrôle des comptes, audit de gestion, accompagnement annuel."
+note: "Prix nets, TVA non applicable (article 293 B du CGI). Le montant exact dépend du nombre de lots et figure sur le devis. Frais de déplacement hors Haute-Garonne sur devis."
+---
+<section class="hero" style="padding-bottom:40px">
+  <div class="wrap">
+    <span class="eyebrow">Tarifs</span>
+    <h1>Des tarifs annoncés à l'avance</h1>
+    <p class="lead">Le premier diagnostic est offert. Ensuite, chaque mission fait l'objet d'un devis écrit, selon la taille de la copropriété et le nombre de documents à analyser.</p>
+  </div>
+</section>
+<section style="padding-top:20px">
+  <div class="wrap">
+    <div class="grid-3">
+      {%- for t in site.data.tarifs %}
+      <div class="card price{% if t.mise_en_avant %} featured{% endif %}"><h2 class="h3">{{ t.titre }}</h2><div class="amount">{{ t.prix }}</div><ul>{% for p in t.points %}<li>{{ p }}</li>{% endfor %}</ul><a class="btn {% if t.mise_en_avant %}btn-primary{% else %}btn-ghost{% endif %}" href="{{ '/contact/' | relative_url }}">{{ t.bouton }}</a></div>
+      {%- endfor %}
+    </div>
+    <p class="rgpd center" style="margin-top:24px">{{ page.note }}</p>
+  </div>
+</section>
