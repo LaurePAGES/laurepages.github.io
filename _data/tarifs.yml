@@ -7,7 +7,7 @@
   bouton: Le demander
   mise_en_avant: false
 - titre: Mission ponctuelle
-  prix: "À partir de 390 €"
+  prix: À partir de 300 €
   points:
     - Contrôle des comptes, audit de gestion ou préparation d'AG
     - Rapport écrit
@@ -15,7 +15,7 @@
   bouton: Demander un devis
   mise_en_avant: true
 - titre: Accompagnement annuel
-  prix: "À partir de 690 € / an"
+  prix: À partir de 690 € / an
   points:
     - Suivi du conseil syndical toute l'année
     - Contrôle des comptes avant l'AG
